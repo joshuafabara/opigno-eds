@@ -1,0 +1,17 @@
+name: opigno
+recipe: drupal9
+config:
+  webroot: /web
+  php: '7.4'
+  xdebug: true
+services:
+  drupal8: # @see https://docs.devwithlando.io/tutorials/mysql.html#configuration
+    type: mysql:5.7
+    creds:
+      user: drupal8
+      password: drupal8
+      database: drupal8
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
